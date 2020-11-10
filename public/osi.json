@@ -1,0 +1,44 @@
+[
+    {
+        "camada": "Aplicação - 7",
+        "info": "Camada de abstração que engloba protocolos que realizam a comunicação fim-a-fim entre aplicações. \rÉ responsável por prover serviços para aplicações de modo a separar a existência de comunicação em rede entre processos de diferentes computadores. É a camada mais próxima do Usuário.",
+        "protocolos": ["HTTP", "RTP", "SMTP", "FTP", "SSH", "Telnet", "SIP", "RDP", "IRC", "SNMP", "NNTP", "POP3", "IMAP", "BitTorrent", "DNS", "..."]
+
+    },
+    {
+        "camada": "Apresentação - 6",
+        "info": "É responsável pela entrega e formatação da informação para a camada de aplicação para posterior processamento ou apresentação. \rTambém é responsável pela compressão e criptografia dos dados.",
+        "protocolos": ["XDR", "TLS", "..."]
+
+    },
+    {
+        "camada": "Sessão - 5",
+        "info": "Ela Cuida dos processos que controlam a transferência dos dados, cuidando dos erros e administrando os registros das transmissões. \rResponsável por coordenar o fluxo dos dados entre os nós. Nela são implementadas regras para sincronização das trocas de mensagens, e por averiguar quais procedimentos a serem tomados em caso de falhas.",
+        "protocolos": ["NetBIOS", "..."]
+
+    },
+    {
+        "camada": "Transporte - 4",
+        "info": "É responsável pela transferência de dados entre duas máquinas, independente da aplicação usada e do tipo, topologia ou configuração das redes físicas existentes entre elas. \rEla reúne protocolos de transporte end-to-end entre máquinas, isto é, uma entidade (hardware/software) que utilize os protocolos desta camada só se comunica com a sua entidade destino, sem comunicação com máquinas intermediárias na rede, como pode ocorrer com as camadas inferiores.",
+        "protocolos": ["NetBEUI", "TCP", "UDP", "SCTP", "DCCP", "RIP", "..."]
+    
+    },
+    {
+        "camada": "Rede - 3",
+        "info": "Ela tem como função principal o transporte de pacotes entre sistemas finais da rede por meio de três funções importantes: \r- Determinação de caminhos: rota escolhida pelos pacotes entre origem e destino, utilizando um algoritmo de roteamento;\r- Comutação: Mover pacotes entre as portas de entradas e saída dos roteadores;\r- Estabelecimento de conexões: Algumas arquiteturas de redes necessitam o estabelecimento de circuitos virtuais antes da transmissão de dados.",
+        "protocolos": ["IP (IPv4, IPv6)", "IPsec", "ICMP", "ARP", "RARP", "NAT", "..."]
+    
+    },
+    {
+        "camada": "Enlace - 2",
+        "info": "Esta camada detecta e, opcionalmente, corrige erros que possam acontecer na camada física. É responsável pela transmissão e recepção (delimitação) de quadros e pelo controle de fluxo.",
+        "protocolos": ["Ethernet", "IEEE 802.1Q", "HDLC", "Token ring", "FDDI", "PPP", "Switch", "Frame relay", "ATM", "..."]
+    
+    },
+    {
+        "camada": "Fisica - 1",
+        "info": "Ela diz respeito aos meios de conexão através dos quais irão trafegar os dados, tais como interfaces seriais, ou cabos coaxiais.",
+        "protocolos": ["Modem", "802.11 Wi-Fi RDIS", "RS-232", "EIA-422", "RS-449", "Bluetooth", "USB", "10BASE-T", "100BASE-TX", "ISDN", "SONET", "DSL", "..."]
+    
+    }
+]
