@@ -1,33 +1,28 @@
 <template>
-  <div class="prototipo">
+  <div class="prototipo d-flex justify-content-center">
 
-    <div>
-      <b-spinner label="Loading..." v-b-tooltip.hover title="Loading...">
-      </b-spinner>
+    <div class="d-flex justify-content-right" style="height: 3rem; margin-left: 12px;">
+      <button type="button" class="btn btn-primary" v-on:click='animarPassar'>Start</button>
     </div>
 
     <!-- primeira coluna -->
     <div class="d-flex flex-row container justify-content-center">
 
       <div class="flex-column" style="margin-right:12px;">
-        <h6>Informações abaixo:</h6>
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Nome da camada aqui</h5>
-            <h6 class="card-subtitle mb-2 text-muted">subtitulo aqui</h6>
-            <p class="card-text">exemplo de conceito que será exibido aqui.</p>
+            <h5 class="card-title" id="camadaName">Inicie a simulação.</h5>
+            <p class="card-text" id="camadaInfo" style="text-align: left;">Informações da camamada são exibidas aqui.</p>
           </div>
         </div>
         <br>
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Protocolos da camada atual</h5>
-            <p class="card-text">exemplo aqui de protocolos que a camada contem.</p>
+            <h5 class="card-title">Protocolos da camada</h5>
+            <p class="card-text" id="protocolos">Protocolos.</p>
           </div>
         </div>
-        <div class="d-flex" style="width:18rem; margin:">
-        <button type="button" class="btn btn-primary" v-on:click='animarPassar'>Start</button>
-      </div>
+        
       </div>
 
       <div class="d-flex flex-column">
@@ -109,7 +104,7 @@
 
       <div class="d-flex flex-column">
         <div class="card" style="width: 12rem;">
-          <ul class="list-group list-group-flush" id="segundaCol">
+          <ul class="list-group list-group-flush">
             <li class="list-group-item">Aplicação</li>
             <li class="list-group-item">Apresentação</li>
             <li class="list-group-item">Sessão</li>
@@ -124,7 +119,7 @@
 
       <div class="d-flex flex-column">
         <div class="card" style="width: 8rem;">
-          <ul class="list-group list-group-flush">
+          <ul class="list-group list-group-flush"  id="segundaCol">
             <li class="list-group-item d-flex flex-row">
               <div class="boxp roxo"> <span id="hide">a</span> </div>
             </li>
@@ -172,33 +167,51 @@
       </div>
 
     </div>
-
+  
   </div>
+  
 </template>
 
 <!-- script -->
 <script>
+import osi from '../../public/osi.json';
 export default {
   data: function() {
     return {
+      osiInfo: osi
     }
   },
   methods: {
     animarPassar: function() {
-      let i = 0;
-      this.chama(i)
+      this.ida(0);
     },
-    chama: async function(i) {
+    ida: async function(i) {
       const timer = ms => new Promise(res => setTimeout(res, ms))
       var elemento = document.querySelectorAll("#primeiraCol>li");
-      if(i<=elemento.length-1) {
-        elemento[i].style.boxShadow = '0px 2px 22px #ff4242';
-        i == 0 ? (i=0) : (elemento[i-1].style.boxShadow = '0px 2px 22px #ff4242');
-        await timer(2000);
-        console.log(i);
+      if(i<=6) {
+        elemento[i].style.boxShadow = '0px 2px 22px #59baf9';
+        i == 0 ? (i=0) : (elemento[i-1].style.boxShadow = '');
+        this.osiDados(i);
+        await timer(3000);
         i = i + 1;
-        this.chama(i);
+        this.ida(i);
+      } else { this.volta(i-1) }
+    },
+    volta: async function(i) {
+      const timer = ms => new Promise(res => setTimeout(res, ms))
+      var elemento = document.querySelectorAll("#segundaCol>li");
+      if(i>=0) {
+        elemento[i].style.boxShadow = '0px 2px 22px #59baf9';
+        i == 6 ? (document.querySelectorAll("#primeiraCol>li")[6].style.boxShadow = '') : (elemento[i+1].style.boxShadow = '');
+        this.osiDados(i);
+        await timer(3000);
+        this.volta(i-1);
       }
+    },
+    osiDados: function(i) {
+      document.querySelectorAll("#camadaName")[0].innerText = "Camada: " + this.osiInfo[i].camada;
+      document.querySelectorAll("#camadaInfo")[0].innerText = this.osiInfo[i].info;
+      document.querySelectorAll("#protocolos")[0].innerText = this.osiInfo[i].protocolos;
     }
   }
 }
