@@ -2,7 +2,7 @@
   <div class="prototipo d-flex justify-content-center">
 
     <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px;">
-      <button type="button" class="btn btn-primary" v-on:click='animarPassar'>Start</button>
+      <button type="button" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
     </div>
 
     <!-- primeira coluna -->
@@ -13,6 +13,7 @@
           <div class="card-body">
             <h5 class="card-title" id="camadaName">Inicie a simulação.</h5>
             <p class="card-text" id="camadaInfo" style="text-align: left;">Informações da camamada são exibidas aqui.</p>
+            <b-icon-box-seam></b-icon-box-seam>
           </div>
         </div>
         <br>
@@ -20,6 +21,7 @@
           <div class="card-body">
             <h5 class="card-title">Protocolos da camada</h5>
             <p class="card-text" id="protocolos">Protocolos.</p>
+            <b-icon-bricks></b-icon-bricks>
           </div>
         </div>
         
