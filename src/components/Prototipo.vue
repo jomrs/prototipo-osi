@@ -2,8 +2,9 @@
   <div class="prototipo justify-content-center">
 
     <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px;">
-      <button type="button" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
+      <button type="button" id="play" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
       <button class="btn btn-secondary" style="margin-left:10px;" v-on:click="aniState==false ? aniState=true: aniState=false"><b-icon-pause></b-icon-pause> Pause </button>
+      <div class="alert alert-danger" v-if="aniState==true" role="alert" style="margin-left:10px; margin-bottom: 2px;">[ Parado ]</div>
     </div>
 
     <!-- primeira coluna -->
@@ -197,6 +198,7 @@ export default {
   methods: {
     animarPassar: function() {
       this.ida(0);
+      document.querySelector("#play").style.display = 'none';
     },
     ida: async function(i) {
       const timer = ms => new Promise(res => setTimeout(res, ms))
@@ -221,6 +223,8 @@ export default {
         await timer(3000);
         while(this.aniState) { await timer(1000); }
         this.volta(i-1);
+      } else {
+        document.querySelector("#play").style.display = 'block';
       }
     },
     osiDados: function(i) {
@@ -264,6 +268,12 @@ export default {
   }
   .focus {
     box-shadow: 0px 1px 35px #7bcafd;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 
 </style>
