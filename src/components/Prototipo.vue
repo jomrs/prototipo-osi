@@ -1,5 +1,5 @@
 <template>
-  <div class="prototipo d-flex justify-content-center">
+  <div class="prototipo justify-content-center">
 
     <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px;">
       <button type="button" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
@@ -76,6 +76,7 @@
         </div>
       </div>
 
+
       <div class="d-flex flex-column">
         <div class="card" style="width: 12rem; margin-left:10px;">
           <ul class="list-group list-group-flush">
@@ -102,6 +103,14 @@
             <li class="list-group-item">1</li>
           </ul>
         </div>
+        
+      <div style="margin-top:10px;">
+      <div class="card d-flex flex-row justify-content-between" style="width: 250px; position: absolute; margin-left:-90px; background: #383838; color: #f7f7f7;">
+        <b-icon-box style="margin-right:22px; margin-left: 4px; margin-top: 2px; margin-bottom: 2px;"></b-icon-box>
+        <b-icon-arrow-right style="margin-top: 2px;"></b-icon-arrow-right>
+        <b-icon-box style="margin-left: 22px; margin-top: 2px; margin-right: 4px;"></b-icon-box>
+      </div>
+    </div>
       </div>
 
       <div class="d-flex flex-column">
@@ -225,7 +234,7 @@ export default {
   #hide { color: #595cf9 }
   li { font-weight: bold; }
   .boxp {
-    width: 16px;
+    width: 12px;
     border-radius: 5px;
   }
   .roxo {
