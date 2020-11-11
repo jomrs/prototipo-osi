@@ -1,7 +1,7 @@
 <template>
   <div class="prototipo d-flex justify-content-center">
 
-    <div class="d-flex justify-content-right" style="height: 3rem; margin-left: 12px;">
+    <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px;">
       <button type="button" class="btn btn-primary" v-on:click='animarPassar'>Start</button>
     </div>
 
@@ -28,32 +28,32 @@
       <div class="d-flex flex-column">
         <div class="card" style="width: 8rem;">
           <ul class="list-group list-group-flush"  id="primeiraCol">
-            <li class="list-group-item d-flex flex-row">
-              <div class="boxp roxo"> <span id="hide">a</span> </div> 
+            <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
+              <div class="boxp roxo"> <span id="hide">a</span> </div>
             </li>
-            <li class="list-group-item d-flex flex-row">
+            <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
               <div class="boxp azul"> </div>
               <div class="boxp roxo"> <span id="hide">a</span> </div>
             </li>
-            <li class="list-group-item d-flex flex-row">
+            <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
               <div class="boxp verde"> </div>
               <div class="boxp azul"> </div>
               <div class="boxp roxo"> <span id="hide">a</span> </div>
             </li>
-            <li class="list-group-item d-flex flex-row">
+            <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
               <div class="boxp lima"> </div>
               <div class="boxp verde"> </div>
               <div class="boxp azul"> </div>
               <div class="boxp roxo"> <span id="hide">a</span> </div>
             </li>
-            <li class="list-group-item d-flex flex-row">
+            <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
               <div class="boxp amarelo"> </div>
               <div class="boxp lima"> </div>
               <div class="boxp verde"> </div>
               <div class="boxp azul"> </div>
               <div class="boxp roxo"> <span id="hide">a</span> </div>
             </li>
-            <li class="list-group-item d-flex flex-row">
+            <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
               <div class="boxp laranja"> </div>
               <div class="boxp amarelo"> </div>
               <div class="boxp lima"> </div>
@@ -61,7 +61,7 @@
               <div class="boxp azul"> </div>
               <div class="boxp roxo"> <span id="hide">a</span> </div>
             </li>
-            <li class="list-group-item d-flex flex-row">
+            <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
               <div class="boxp vermelho"> </div>
               <div class="boxp laranja"> </div>
               <div class="boxp amarelo"> </div>
@@ -75,15 +75,15 @@
       </div>
 
       <div class="d-flex flex-column">
-        <div class="card" style="width: 12rem;">
+        <div class="card" style="width: 12rem; margin-left:10px;">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Aplicação</li>
-            <li class="list-group-item">Apresentação</li>
-            <li class="list-group-item">Sessão</li>
-            <li class="list-group-item">Transporte</li>
-            <li class="list-group-item">Rede</li>
-            <li class="list-group-item">Enlace</li>
-            <li class="list-group-item">Fisica</li>
+            <li class="list-group-item" style="background:#595cf9; color:#2d2d2d;">Aplicação</li>
+            <li class="list-group-item" style="background:#59baf9; color:#2d2d2d;">Apresentação</li>
+            <li class="list-group-item" style="background:#59f99d; color:#2d2d2d;">Sessão</li>
+            <li class="list-group-item" style="background:#a0f959; color:#2d2d2d;">Transporte</li>
+            <li class="list-group-item" style="background:#f3f959; color:#2d2d2d;">Rede</li>
+            <li class="list-group-item" style="background:#f99d59; color:#2d2d2d;">Enlace</li>
+            <li class="list-group-item" style="background:#f95959; color:#2d2d2d;">Fisica</li>
           </ul>
         </div>
       </div>
@@ -103,15 +103,15 @@
       </div>
 
       <div class="d-flex flex-column">
-        <div class="card" style="width: 12rem;">
+        <div class="card" style="width: 12rem; margin-right:10px;">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Aplicação</li>
-            <li class="list-group-item">Apresentação</li>
-            <li class="list-group-item">Sessão</li>
-            <li class="list-group-item">Transporte</li>
-            <li class="list-group-item">Rede</li>
-            <li class="list-group-item">Enlace</li>
-            <li class="list-group-item">Fisica</li>
+            <li class="list-group-item" style="background:#595cf9; color:#2d2d2d;">Aplicação</li>
+            <li class="list-group-item" style="background:#59baf9; color:#2d2d2d;">Apresentação</li>
+            <li class="list-group-item" style="background:#59f99d; color:#2d2d2d;">Sessão</li>
+            <li class="list-group-item" style="background:#a0f959; color:#2d2d2d;">Transporte</li>
+            <li class="list-group-item" style="background:#f3f959; color:#2d2d2d;">Rede</li>
+            <li class="list-group-item" style="background:#f99d59; color:#2d2d2d;">Enlace</li>
+            <li class="list-group-item" style="background:#f95959; color:#2d2d2d;">Fisica</li>
           </ul>
         </div>
 
@@ -223,7 +223,7 @@ export default {
   #hide { color: #595cf9 }
   li { font-weight: bold; }
   .boxp {
-    width: 15rem;
+    width: 16px;
     border-radius: 5px;
   }
   .roxo {
