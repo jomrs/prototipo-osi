@@ -3,6 +3,7 @@
 
     <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px;">
       <button type="button" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
+      <button class="btn btn-secondary" style="margin-left:10px;" v-on:click="aniState==false ? aniState=true: aniState=false"><b-icon-pause></b-icon-pause> Pause </button>
     </div>
 
     <!-- primeira coluna -->
@@ -189,7 +190,8 @@ import osi from '../../public/osi.json';
 export default {
   data: function() {
     return {
-      osiInfo: osi
+      osiInfo: osi,
+      aniState: false
     }
   },
   methods: {
@@ -204,6 +206,7 @@ export default {
         i == 0 ? (i=0) : (elemento[i-1].style.boxShadow = '');
         this.osiDados(i);
         await timer(3000);
+        while(this.aniState) { await timer(1000); }
         i = i + 1;
         this.ida(i);
       } else { this.volta(i-1) }
@@ -216,6 +219,7 @@ export default {
         i == 6 ? (document.querySelectorAll("#primeiraCol>li")[6].style.boxShadow = '') : (elemento[i+1].style.boxShadow = '');
         this.osiDados(i);
         await timer(3000);
+        while(this.aniState) { await timer(1000); }
         this.volta(i-1);
       }
     },
