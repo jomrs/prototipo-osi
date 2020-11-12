@@ -197,14 +197,15 @@ export default {
   },
   methods: {
     animarPassar: function() {
-      this.ida(0);
+      //this.ida(0);
       document.querySelector("#play").style.display = 'none';
+      this.slideAnimacao('soma', document.querySelectorAll("#primeiraCol>li"), 0);
     },
     ida: async function(i) {
       const timer = ms => new Promise(res => setTimeout(res, ms))
       var elemento = document.querySelectorAll("#primeiraCol>li");
       if(i<=6) {
-        elemento[i].style.boxShadow = '0px 2px 22px #59baf9';
+        //elemento[i].style.boxShadow = '0px 2px 22px #59baf9';
         i == 0 ? (i=0) : (elemento[i-1].style.boxShadow = '');
         this.osiDados(i);
         await timer(3000);
@@ -225,6 +226,26 @@ export default {
         this.volta(i-1);
       } else {
         document.querySelector("#play").style.display = 'block';
+      }
+    },
+    slideAnimacao: async function(tipo, elemento, col) { //responsavél por fazer a animação.
+      const timer = ms => new Promise(res => setTimeout(res, ms));
+      if(tipo == 'soma') {
+        this.destaque('adiciona', col, elemento);
+        this.osiDados(col);
+        await timer(3000);
+        while(this.aniState) { await timer(1000); }
+        elemento < 6 ? (elemento = 0) : this.slideAnimacao('soma', elemento, col+1); // alterar volta.
+      } else {
+        return '' // todo: adicionar a "volta"
+      }
+    },
+    destaque: function(tipo, col, ele) { //responsavél por adicionar o destaque na linha.
+      if(tipo == 'adiciona') {
+        ele[col].style.boxShadow = '0px 2px 22px #59baf9';
+        ele == 0 ? (ele = 0) : this.destaque('remover', col, ele);
+      } else {
+        col == 0 ? (col = 0) : ele[col-1].style.boxShadow = 'none';
       }
     },
     osiDados: function(i) {
