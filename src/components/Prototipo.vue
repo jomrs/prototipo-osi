@@ -198,6 +198,9 @@ export default {
   methods: {
     animarPassar: function() {
       document.querySelector("#play").style.display = 'none';
+      document.querySelectorAll('#primeiraCol>li>div.hide, #segundaCol>li>div.hide').forEach(ele => {
+        ele.classList.toggle('hide');
+      });
       this.slideAnimacao('ida', 0);
     },
     slideAnimacao: async function(tipo, num) { //responsavél por fazer a animação.
@@ -223,6 +226,9 @@ export default {
     destaque: function(tipo, elemento, num, ordem) { //responsavél por adicionar o destaque na linha.
       if(tipo == 'adiciona') {
         elemento[num].style.boxShadow = '0px 2px 22px #59baf9';
+        elemento[num].children.forEach(element => {
+          element.classList.toggle('hide')
+        });
         this.destaque('remove', elemento, num, ordem);
       } else {
         ordem == 'ida' ? ( num == 0 ? (num = 0) : elemento[num-1].style.boxShadow = 'none' ) : ( num == 6 ? (num = 6) : (elemento[num+1].style.boxShadow = 'none') );
@@ -275,6 +281,13 @@ export default {
   }
   .fade-enter, .fade-leave-to {
     opacity: 0;
+  }
+  #primeiraCol>li>div, #segundaCol>li>div {
+    opacity: 0;
+  }
+  #primeiraCol>li>div.hide, #segundaCol>li>div.hide{
+    transition: opacity 1s;
+    opacity: 1;
   }
 
 </style>
