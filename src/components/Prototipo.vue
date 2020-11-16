@@ -1,7 +1,7 @@
 <template>
   <div class="prototipo justify-content-center">
 
-    <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px;">
+    <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px; margin-bottom: 10px;">
       <button type="button" id="play" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
       <button class="btn btn-secondary" style="margin-left:10px;" v-on:click="aniState==false ? aniState=true: aniState=false"><b-icon-pause></b-icon-pause> Pause </button>
       <div class="alert alert-danger" v-if="aniState==true" role="alert" style="margin-left:10px; margin-bottom: 0px; padding: 8px">[ Parado ]</div>
@@ -206,9 +206,9 @@ export default {
     goPacote: function() {
       const pacote = document.querySelectorAll('#boxPass')[0];
       if(pacote.style.marginLeft == "0.2rem") {
-        document.querySelectorAll('#boxPass')[0].style.marginLeft = "14rem"
+        pacote.style.marginLeft = "14rem"
       } else {
-        document.querySelectorAll('#boxPass')[0].style.marginLeft = "0.2rem"  
+        pacote.style.marginLeft = "0.2rem"
       }
     },
     slideAnimacao: async function(tipo, num) { //responsavél por fazer a animação.
@@ -302,7 +302,7 @@ export default {
     margin-top: 2px;
     margin-bottom: 2px;
     margin-left: 0.2rem;
-    transition: margin 1s;
+    transition: margin .8s;
   }
 
 </style>
