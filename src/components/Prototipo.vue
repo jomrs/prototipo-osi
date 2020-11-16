@@ -108,9 +108,8 @@
         
       <div style="margin-top:10px;">
       <div class="card d-flex flex-row justify-content-between" style="width: 250px; position: absolute; margin-left:-90px; background: #383838; color: #f7f7f7;">
-        <b-icon-box style="margin-right:22px; margin-left: 4px; margin-top: 2px; margin-bottom: 2px;"></b-icon-box>
+        <b-icon-box id="boxPass"></b-icon-box>
         <b-icon-arrow-right style="margin-top: 2px;"></b-icon-arrow-right>
-        <b-icon-box style="margin-left: 22px; margin-top: 2px; margin-right: 4px;"></b-icon-box>
       </div>
     </div>
       </div>
@@ -201,7 +200,16 @@ export default {
       document.querySelectorAll('#primeiraCol>li>div.hide, #segundaCol>li>div.hide').forEach(ele => {
         ele.classList.toggle('hide');
       });
+      this,this.goPacote();
       this.slideAnimacao('ida', 0);
+    },
+    goPacote: function() {
+      const pacote = document.querySelectorAll('#boxPass')[0];
+      if(pacote.style.marginLeft == "0.2rem") {
+        document.querySelectorAll('#boxPass')[0].style.marginLeft = "14rem"
+      } else {
+        document.querySelectorAll('#boxPass')[0].style.marginLeft = "0.2rem"  
+      }
     },
     slideAnimacao: async function(tipo, num) { //responsavél por fazer a animação.
       const timer = ms => new Promise(res => setTimeout(res, ms));
@@ -212,7 +220,7 @@ export default {
         this.osiDados(num);
         await timer(800);
         while(this.aniState) { await timer(1000); }
-        if(num == 6) { elementoIda[num].style.boxShadow = 'none' }
+        if(num == 6) { elementoIda[num].style.boxShadow = 'none'; this.goPacote() }
         if(num == 0) { elementoVolta[num].style.boxShadow = 'none' }
         num == 6 ? (this.slideAnimacao('volta', 6)) : this.slideAnimacao('ida', num+1);
       } else {
@@ -288,6 +296,13 @@ export default {
   #primeiraCol>li>div.hide, #segundaCol>li>div.hide{
     transition: opacity 1s;
     opacity: 1;
+  }
+  #boxPass {
+    margin-right:22px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 0.2rem;
+    transition: margin 1s;
   }
 
 </style>
