@@ -218,7 +218,7 @@ export default {
       if(tipo == 'ida') {
         this.destaque('adiciona', elementoIda, num, 'ida');
         this.osiDados(num);
-        await timer(800);
+        await timer(1000);
         while(this.aniState) { await timer(1000); }
         if(num == 6) { elementoIda[num].style.boxShadow = 'none'; this.goPacote() }
         if(num == 0) { elementoVolta[num].style.boxShadow = 'none' }
@@ -226,7 +226,7 @@ export default {
       } else {
         this.destaque('adiciona', elementoVolta, num, 'volta');
         this.osiDados(num);
-        await timer(800);
+        await timer(1000);
         while(this.aniState) { await timer(1000); }
         num > 0 ? (this.slideAnimacao('volta', num-1)) : (document.querySelector("#play").style.display = 'block');
       }
