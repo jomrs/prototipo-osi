@@ -1,12 +1,14 @@
 <template>
   <div class="prototipo justify-content-center">
 
-    <div class="d-flex justify-content-right" style="height: 2.5rem; margin-left: 12px; margin-bottom: 10px;">
+    <div class="d-flex justify-content-right form-group" style="height: 2.5rem; margin-left: 12px; margin-bottom: 10px;">
       <button type="button" id="play" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
       <button class="btn btn-secondary" style="margin-left:10px;" v-on:click="aniState==false ? aniState=true: aniState=false"><b-icon-pause></b-icon-pause> Pause </button>
       <div class="alert alert-danger" v-if="aniState==true" role="alert" style="margin-left:10px; margin-bottom: 0px; padding: 8px">[ Parado ]</div>
+      <div class="form-group">
+        <input type="number" id="velocidade" class="vel form-control" min='1' max='10' value='3'>
+      </div>
     </div>
-
     <!-- primeira coluna -->
     <div class="d-flex flex-row container justify-content-center">
 
@@ -218,7 +220,7 @@ export default {
       if(tipo == 'ida') {
         this.destaque('adiciona', elementoIda, num, 'ida');
         this.osiDados(num);
-        await timer(1000);
+        await timer(this.getVelocidade());
         while(this.aniState) { await timer(1000); }
         if(num == 6) { elementoIda[num].style.boxShadow = 'none'; this.goPacote() }
         if(num == 0) { elementoVolta[num].style.boxShadow = 'none' }
@@ -226,7 +228,7 @@ export default {
       } else {
         this.destaque('adiciona', elementoVolta, num, 'volta');
         this.osiDados(num);
-        await timer(1000);
+        await timer(this.getVelocidade());
         while(this.aniState) { await timer(1000); }
         num > 0 ? (this.slideAnimacao('volta', num-1)) : (document.querySelector("#play").style.display = 'block');
       }
@@ -241,6 +243,10 @@ export default {
       } else {
         ordem == 'ida' ? ( num == 0 ? (num = 0) : elemento[num-1].style.boxShadow = 'none' ) : ( num == 6 ? (num = 6) : (elemento[num+1].style.boxShadow = 'none') );
       }
+    },
+    getVelocidade: function() {
+      const velocidade = document.querySelectorAll('#velocidade')[0].value;
+      return velocidade * 1000
     },
     osiDados: function(i) {
       document.querySelectorAll("#camadaName")[0].innerText = "Camada: " + this.osiInfo[i].camada;
@@ -303,6 +309,12 @@ export default {
     margin-bottom: 2px;
     margin-left: 0.2rem;
     transition: margin .8s;
+  }
+  .vel {
+    margin-left: 10px;
+    border: solid 1px #d8d8d8;
+    border-radius: 5px;
+    padding-left: 12px;
   }
 
 </style>
