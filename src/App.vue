@@ -29,6 +29,11 @@ export default {
   height: 2rem;
   margin-left: 19rem;
 }
+.arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 19.27rem;
+}
 .monitores {
   display: flex;
   justify-content: center;
