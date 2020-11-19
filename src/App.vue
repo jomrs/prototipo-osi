@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <prototipo/>
+    <footer class="rodape">
+      <span>Protótipo de simulador da camada OSI - Criado por: Jonhtan Mota.</span>
+    </footer>
   </div>
 </template>
 
@@ -47,5 +50,14 @@ export default {
   background: #fbfbfb;
   border: solid 1px #d4d4d4;
   border-radius: 5px;
+}
+.rodape {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  background: #fbfbfb;
+  border: solid 1px #d4d4d4;
+  color: #777;
 }
 </style>
