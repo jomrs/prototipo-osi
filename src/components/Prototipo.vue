@@ -1,11 +1,6 @@
 <template>
   <div class="prototipo justify-content-center">
 
-    <div class="content">
-      <b-icon-display class="display"></b-icon-display>
-      <b-icon-display class="display"></b-icon-display>
-    </div>
-
     <div class="d-flex justify-content-right form-group" style="height: 2.5rem; margin-left: 12px; margin-bottom: 10px;">
       <button type="button" id="play" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
       <button class="btn btn-secondary" style="margin-left:10px;" v-on:click="aniState==false ? aniState=true: aniState=false"><b-icon-pause></b-icon-pause> Pause </button>
@@ -14,6 +9,18 @@
         <input type="number" id="velocidade" class="vel form-control" min='1' max='10' value='3'>
       </div>
     </div>
+
+    <div class="content d-flex flex-row justify-content-center">
+      <div class="d-flex flex-column">
+        <b-icon-display class="display"></b-icon-display>
+        <b-icon-arrow-down class="arrow"></b-icon-arrow-down>
+      </div>
+      <div class="d-flex flex-column">
+        <b-icon-display class="display"></b-icon-display>
+        <b-icon-arrow-up class="arrow"></b-icon-arrow-up>
+      </div>
+    </div>
+
     <!-- primeira coluna -->
     <div class="d-flex flex-row container justify-content-center">
 
