@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <prototipo/>
   </div>
 </template>
@@ -24,5 +23,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 12px;
+}
+.display {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 19rem;
+}
+.monitores {
+  display: flex;
+  justify-content: center;
 }
 </style>
