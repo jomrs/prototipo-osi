@@ -22,6 +22,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  justify-content: center;
   margin-top: 12px;
 }
 .display {
@@ -37,5 +39,13 @@ export default {
 .monitores {
   display: flex;
   justify-content: center;
+}
+.prototipo {
+  min-height: 32rem;
+  padding: 13px;
+  margin: 7px;
+  background: #fbfbfb;
+  border: solid 1px #d4d4d4;
+  border-radius: 5px;
 }
 </style>
