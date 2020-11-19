@@ -1,17 +1,17 @@
 # prototipo-osi
 Prototipo para matéria de estágio 2020/2.
 
-## Project setup
+## Instalação
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compilar
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Build
 ```
 npm run build
 ```
