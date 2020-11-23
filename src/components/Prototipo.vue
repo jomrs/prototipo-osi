@@ -1,7 +1,7 @@
 <template>
   <div class="prototipo justify-content-center">
 
-    <div class="d-flex justify-content-right form-group" style="height: 2.5rem; margin-left: 12px; margin-bottom: 10px;">
+    <div class="d-flex justify-content-right form-group" id="controls" style="height: 2.5rem; margin-left: 12px; margin-bottom: 10px;">
       <button type="button" id="play" class="btn btn-primary" v-on:click='animarPassar'><b-icon-play></b-icon-play> Start </button>
       <button class="btn btn-secondary" style="margin-left:10px;" v-on:click="aniState==false ? aniState=true: aniState=false"><b-icon-pause></b-icon-pause> Pause </button>
       <div class="alert alert-danger" v-if="aniState==true" role="alert" style="margin-left:10px; margin-bottom: 0px; padding: 8px">[ Parado ]</div>
@@ -23,7 +23,7 @@
 
     <!-- primeira coluna -->
     <div class="d-flex flex-row container justify-content-center">
-
+      <div id="informa">
       <div class="flex-column" style="margin-right:12px;">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
@@ -42,9 +42,11 @@
         </div>
         
       </div>
+      </div>
 
+      <div id="camadas" class="d-flex">
       <div class="d-flex flex-column">
-        <div class="card" style="width: 8rem;">
+        <div class="card">
           <ul class="list-group list-group-flush"  id="primeiraCol">
             <li class="list-group-item d-flex flex-row" style="justify-content:flex-end;">
               <div class="boxp roxo"> <span id="hide">a</span> </div>
@@ -144,7 +146,7 @@
       </div>
 
       <div class="d-flex flex-column">
-        <div class="card" style="width: 8rem;">
+        <div class="card">
           <ul class="list-group list-group-flush"  id="segundaCol">
             <li class="list-group-item d-flex flex-row">
               <div class="boxp roxo"> <span id="hide">a</span> </div>
@@ -191,6 +193,7 @@
           </ul>
         </div>
       </div>
+      </div> <!-- end experiments -->
 
     </div>
   
@@ -327,6 +330,31 @@ export default {
     border: solid 1px #d8d8d8;
     border-radius: 5px;
     padding-left: 12px;
+  }
+
+  /* Responsive */
+  @media only screen and (max-width: 768px) {
+    #controls {
+      justify-content: center;
+    }
+    #informa {
+      position: absolute;
+      margin-top: 25rem;
+      display: -webkit-inline-box !important;
+    }
+    div#camadas > div > div[class="card"] {
+      max-width: 9.4rem !important;
+    }
+    div#camadas > div > div {
+      max-width: 3rem !important;
+    }
+    #primeiraCol, #segundaCol {
+      max-width: 6rem !important;
+    }
+    .display, .arrow {
+      margin-left: 4rem !important;
+      margin-right: 4rem !important;
+    }
   }
 
 </style>
