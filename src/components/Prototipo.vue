@@ -123,7 +123,7 @@
         </div>
         
       <div style="margin-top:10px;">
-      <div class="card d-flex flex-row justify-content-between" style="width: 250px; position: absolute; margin-left:-90px; background: #383838; color: #f7f7f7;">
+      <div class="card d-flex flex-row justify-content-between boxpass" style="width: 250px; position: absolute; margin-left:-90px; background: #383838; color: #f7f7f7;">
         <b-icon-box id="boxPass"></b-icon-box>
         <b-icon-arrow-right style="margin-top: 2px;"></b-icon-arrow-right>
       </div>
@@ -354,6 +354,26 @@ export default {
     .display, .arrow {
       margin-left: 4rem !important;
       margin-right: 4rem !important;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    div#camadas > div > div[class="card"] {
+      max-width: 9rem !important;
+    }
+    div#camadas > div:nth-child(2) {
+      display: none !important;
+    }
+    div#camadas > div > div[style="width: 4rem;"] {
+      display: none;
+    }
+    .boxpass {
+      margin-top: 358px;
+      margin-left: -55px !important;
+    }
+    .display, .arrow {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
     }
   }
 
