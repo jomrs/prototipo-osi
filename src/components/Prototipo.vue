@@ -6,7 +6,7 @@
       <button class="btn btn-secondary" style="margin-left:10px;" v-on:click="aniState==false ? aniState=true: aniState=false"><b-icon-pause></b-icon-pause> Pause </button>
       <div class="alert alert-danger" v-if="aniState==true" role="alert" style="margin-left:10px; margin-bottom: 0px; padding: 8px">[ Parado ]</div>
       <div class="form-group">
-        <input type="number" id="velocidade" class="vel form-control" min='1' max='10' value='3'>
+        <input type="number" id="velocidade" class="vel form-control" min='1' max='10' value='3' v-b-popover.hover.top="'Coloque um numero para alterar a velocidade de transição.'" title="Velocidade de Transição">
       </div>
     </div>
 
