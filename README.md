@@ -1,17 +1,20 @@
-# prototipo-osi
-Prototipo para matéria de estágio 2020/2.
-
-## Instalação
+# Protótipo OSI
+![Build](https://github.com/jonhtan/prototipo-osi/workflows/Build/badge.svg)
+Prototipo de módulo sobre o modelo OSI para auxiliar em aulas. Estágio 2020/2 - CEULP/ULBRA.
+### Instalação
 ```
+git clone https://github.com/jonhtan/prototipo-osi.git
+cd prototipo-osi
 npm install
 ```
-
-### Compilar
+Ambiente de desenvolvimento:
 ```
 npm run serve
 ```
-
-### Build
+Gerar build de produção:
 ```
 npm run build
 ```
+
+### Demo
+> https://prototipo-osi.netlify.app/
