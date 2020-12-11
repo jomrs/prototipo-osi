@@ -1,5 +1,5 @@
 # Protótipo OSI
-![Build](https://github.com/jonhtan/prototipo-osi/workflows/Build/badge.svg)
+![Build](https://github.com/jonhtan/prototipo-osi/workflows/Build/badge.svg)  
 Prototipo de módulo sobre o modelo OSI para auxiliar em aulas. Estágio 2020/2 - CEULP/ULBRA.
 ### Instalação
 ```
